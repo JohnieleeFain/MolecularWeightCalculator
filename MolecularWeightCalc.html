@@ -17,13 +17,22 @@
     <div class="container">
         <h1>Molecular Weight Calculator</h1>
         <p>Find the molecular wieght of common organic compounds and atomic mass of the listed elements.</p>
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default" onclick="storePlayerChoice(0)">Element</button>
-                        <button type="button" class="btn btn-default" onclick="storePlayerChoice(1)">Compound</button>
-                    </div>
+                    <select id="elements">
+                        <option value="1">one</option>
+                        <option value="2">two</option>
+                        <option value="3">three</option>
+                    </select>
+<button type="button" onclick="getElement()">Get Element</button>
         <p></p>
-        <input type="button" onclick="displayGameResult('result'), displayScoreBoard('wins', 'losses', 'ties')" value="Calculate" class="btn btn-primary">
+                        <select id="compounds">
+                        <option value="1">one</option>
+                        <option value="2">two</option>
+                        <option value="3">three</option>
+                    </select>
+<button type="button" onclick="getCompound()">Get Compound</button>
         <p></p>
+<div id="output">Selected Option</div>
+
         <div id="result"></div>
         <div id="scoreboard">
         <table class="table">
