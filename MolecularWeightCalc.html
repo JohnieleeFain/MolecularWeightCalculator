@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Molecular Weight Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel = "stylesheet " href = "MolecularWeightCalc.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="rochambeau.js"></script>
+</head>
+
+<body>
+    <p/><p/>
+    <div class="container">
+        <h1>Molecular Weight Calculator</h1>
+        <p>Find the molecular wieght of common organic compounds and atomic mass of the listed elements.</p>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default" onclick="storePlayerChoice(0)">Element</button>
+                        <button type="button" class="btn btn-default" onclick="storePlayerChoice(1)">Compound</button>
+                    </div>
+        <p></p>
+        <input type="button" onclick="displayGameResult('result'), displayScoreBoard('wins', 'losses', 'ties')" value="Calculate" class="btn btn-primary">
+        <p></p>
+        <div id="result"></div>
+        <div id="scoreboard">
+        <table class="table">
+            <tr>
+                <td>Element:</td><td>Symbol/Atom:</td><td># of Atoms:</td><td>Atomic Mass:</td> <td>Subtotal Mass:</td>
+            </tr>
+            <tr>
+                <td id="elements">0</td><td id="symbols/atoms">0</td><td id="atoms">0</td><td id="masses">0</td><td id="subtotal">0</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</body>
+</html>
