@@ -9,7 +9,7 @@
     <link rel = "stylesheet " href = "MolecularWeightCalc.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="rochambeau.js"></script>
+    <script src="MolecularWeightCalc.js"></script>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <h1>Molecular Weight Calculator</h1>
         <p>Find the molecular weight of common organic compounds and atomic mass of the listed elements.</p>
                     <select id="elements">
-                        <option value="1">Actinium [Ac]</option>
+                        <option value=Ac>Actinium [Ac]</option>
                         <option value="2">Aluminum [Al]</option>
                         <option value="3">Americium [Am]</option>
                         <option value="4">Antimony [Sb]</option>
@@ -68,7 +68,7 @@
                         <option value="48">Lanthaum [La]</option>
                         <option value="49">Lawrencium [Lr]</option>
                         <option value="50">Lead [Pb]</option>
-                        <option value="51">Lithium [Li]</option>
+                        <option value=Li>Lithium [Li]</option>
                         <option value="52">Lutetium [Lu]</option>
                         <option value="53">Magnesium [Mg]</option>
                         <option value="54">Manganese [Mn]</option>
@@ -130,7 +130,7 @@
 
 
                     </select>
-<button type="button" onclick="getElement()">Get Element</button>
+<button type="button" onclick="getElement(document.getElementById('elements').value)">Get Element</button>
         <p></p>
                         <select id="compounds">
                         <option value="1">Abietic Acid [C19H29COOH]</option>
