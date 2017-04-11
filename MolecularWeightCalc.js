@@ -131,13 +131,6 @@ var value = a.options[a.selectedIndex].value;
 document.getElementById("output").innerHTML = value;
 }
 
-
-function Element(number, symbol, mass){
-    this.number = number;
-    this.symbol = symbol;
-    this.mass = mass;
-}
-var element = new Element(1, "H", 1.01);
 //
 //function NumberOfElements() {
 //    var x= document.getElementById("elements").selected;
