@@ -125,10 +125,11 @@ console.log(msg);
 document.getElementById("atoms").innerHTML = msg;
 }
 
-function getCompound() {
-var a = document.getElementById("compounds");
-var value = a.options[a.selectedIndex].value;
-document.getElementById("output").innerHTML = value;
+function getCompound(comp) {
+//var a = document.getElementById("compounds");
+//var value = a.options[a.selectedIndex].value;
+var  msg_comp = comp;
+document.getElementById("atoms").innerHTML = value;
 }
 
 //
