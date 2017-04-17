@@ -125,7 +125,7 @@ var Mt = new Element("Mt", 109, 268);
 //document.getElementById("atoms").innerHTML = msg;
 //}
 
-function getElement(elem) { // elem = 'Li'
+function getElement(elem) {
 //var value = a.options[a.selectedIndex].value;
 //var msg = elem;
 //console.log(msg);
