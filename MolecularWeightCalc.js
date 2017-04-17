@@ -127,11 +127,17 @@ var Mt = new Element("Mt", 109, 268);
 
 function getElement(elem) {
 //var value = a.options[a.selectedIndex].value;
-//var msg = elem;
-//console.log(msg);
-document.getElementById("atoms").innerHTML = elem.symbol;
+var msg = elem;
+console.log(msg);
+document.getElementById("atoms").innerHTML = elem;
 document.getElementById("masses").innerHTML = elem.mass;
 }
+
+//function getMass(masses) {  //function for getting the masses of elements (not working)
+  //  var msgMass = masses;
+    //console.log(msgMass);
+    //document.getElementById("masses").innerHTML = masses;
+//}
 
 function getCompound(comp) {
 //var a = document.getElementById("compounds");
