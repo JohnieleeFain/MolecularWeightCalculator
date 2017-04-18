@@ -131,6 +131,7 @@ function getElement(elemSymbol) {
             break;
         }
     }
+    document.getElementById("atomic").innerHTML = elem.aNum;
     document.getElementById("atoms").innerHTML = elem.symbol;
     document.getElementById("masses").innerHTML = elem.mass;
 }
