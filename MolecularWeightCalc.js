@@ -1,11 +1,11 @@
-function Element(symbol, aNum, mass){
+function Element(symbol, aNum, mass) {
     this.symbol = symbol;
     this.aNum = aNum;
     this.mass = mass
 }
-
-var H = new Element("H", 1, 1.01);
-var He = new Element("He", 2, 4.00);
+var elements = new Array(109);
+elements[0] = new Element("H", 1, 1.01);
+elements[1] = new Element("He", 2, 4.00);
 var Li = new Element("Li", 3, 6.94);
 //var Li = new Element("Li", 3);",
 var Be = new Element("Be", 4, 9.01);
@@ -48,7 +48,7 @@ var Zr = new Element("Zr", 40, 91.22);
 var Nb = new Element("Nb", 41, 92.91);
 var Mo = new Element("Mo", 42, 95.94);
 var Tc = new Element("Tc", 43, 98); //atomic mass was in parentheses, don't know what that means
-var Ru = new Element("Ru", 44, 101,07);
+var Ru = new Element("Ru", 44, 101, 07);
 var Rh = new Element("Rh", 45, 102.91);
 var Pd = new Element("Pd", 46, 106.42);
 var Ag = new Element("Ag", 47, 107.87);
@@ -81,9 +81,9 @@ var Ta = new Element("Ta", 73, 180.95);
 var W = new Element("W", 74, 183.64);
 var Re = new Element("Ac", 75, 186.21);
 var Os = new Element("Os", 76, 190.23);
-var Ir = new Element("Ir", 77,  192.22);
+var Ir = new Element("Ir", 77, 192.22);
 var Pt = new Element("Pt", 78, 195.08);
-var Au =  new Element("Au", 79, 196.97);
+var Au = new Element("Au", 79, 196.97);
 var Hg = new Element("Hg", 80, 200.59);
 var Ti = new Element("Ti", 81, 204.38); //Tl or Ti?
 var Pb = new Element("Pb", 82, 207.2);
@@ -115,8 +115,6 @@ var Sg = new Element("Sg", 106, 266);
 var Bh = new Element("Bh", 107, 264);
 var Hs = new Element("Hs", 108, 269);
 var Mt = new Element("Mt", 109, 268);
-
-
 //function getElement(elem) {
 //var msg = document.getElementById("elements").value;
 //var value = a.options[a.selectedIndex].value;
@@ -124,24 +122,26 @@ var Mt = new Element("Mt", 109, 268);
 //console.log(msg);
 //document.getElementById("atoms").innerHTML = msg;
 //}
-
-function getElement(elem) {
-//var value = a.options[a.selectedIndex].value;
-var msg = elem;
-console.log(msg);
-document.getElementById("atoms").innerHTML = elem;
-document.getElementById("masses").innerHTML = elem.mass;
+function getElement(elemSymbol) {
+    //var value = a.options[a.selectedIndex].value;
+    var elem = null;
+    for (i = 0; i < elements.length; i++) {
+        if (elements[i].symbol === elemSymbol) {
+            elem = elements[i];
+            break;
+        }
+    }
+    document.getElementById("atoms").innerHTML = elem.symbol;
+    document.getElementById("masses").innerHTML = elem.mass;
 }
-
 //function getMass(masses) {  //function for getting the masses of elements (not working)
-  //  var msgMass = masses;
-    //console.log(msgMass);
-    //document.getElementById("masses").innerHTML = masses;
+//  var msgMass = masses;
+//console.log(msgMass);
+//document.getElementById("masses").innerHTML = masses;
 //}
-
 function getCompound(comp) {
-//var a = document.getElementById("compounds");
-//var value = a.options[a.selectedIndex].value;
-var  msg_comp = comp;
-document.getElementById("atoms").innerHTML = value;
+    //var a = document.getElementById("compounds");
+    //var value = a.options[a.selectedIndex].value;
+    var msg_comp = comp;
+    document.getElementById("atoms").innerHTML = value;
 }
