@@ -115,6 +115,7 @@ var Sg = new Element("Sg", 106, 266);
 var Bh = new Element("Bh", 107, 264);
 var Hs = new Element("Hs", 108, 269);
 var Mt = new Element("Mt", 109, 268);
+
 //function getElement(elem) {
 //var msg = document.getElementById("elements").value;
 //var value = a.options[a.selectedIndex].value;
@@ -122,6 +123,7 @@ var Mt = new Element("Mt", 109, 268);
 //console.log(msg);
 //document.getElementById("atoms").innerHTML = msg;
 //}
+
 function getElement(elemSymbol) {
     //var value = a.options[a.selectedIndex].value;
     var elem = null;
@@ -134,11 +136,7 @@ function getElement(elemSymbol) {
     document.getElementById("atoms").innerHTML = elem.symbol;
     document.getElementById("masses").innerHTML = elem.mass;
 }
-//function getMass(masses) {  //function for getting the masses of elements (not working)
-//  var msgMass = masses;
-//console.log(msgMass);
-//document.getElementById("masses").innerHTML = masses;
-//}
+
 function getCompound(comp) {
     //var a = document.getElementById("compounds");
     //var value = a.options[a.selectedIndex].value;
