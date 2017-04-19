@@ -132,6 +132,8 @@ function getElement(elemSymbol) {
     document.getElementById("atomic").innerHTML = elem.aNum;
     document.getElementById("atoms").innerHTML = elem.symbol;
     document.getElementById("masses").innerHTML = elem.mass;
+    document.getElementById("subtotal").innerHTML=elem.mass;
+    document.getElementById("number").innerHTML= 1;
 }
 
 function Compound(formula) {
