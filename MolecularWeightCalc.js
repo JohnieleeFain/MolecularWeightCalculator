@@ -191,7 +191,7 @@ compounds[45] = new Compound("CH4");
 compounds[46] = new Compound("CH3OH");
 compounds[47] = new Compound("C3H6O2");
 //compounds[] = new Compound("CH3CH(CH3)CH3]</option"); 2-Methylpropene
-compounds[48] = new Compound("C10H8]");
+compounds[48] = new Compound("C10H8");
 compounds[49] = new Compound("C8H18");
 compounds[50] = new Compound("C5H12");
 compounds[51] = new Compound("CH3CONHC6H4OC2H5");
@@ -220,7 +220,7 @@ function Cmpd(formula) { //compound -- property = the compounds formula
                 str.unshift(formula.charAt(i)); //substring/parse the string at its first character
             }
         }
-        if (x / 1 != NaN); //if x is not equal to NaN --> which really means, if x is a number
+        if (x / 1 != NaN){ //if x is not equal to NaN --> which really means, if x is a number
     }
     else if (x === Number) { //if x is a numbr
         if (formula.charAt(i++) === Number) { //if the second character in the string is also a number
@@ -234,4 +234,5 @@ function Cmpd(formula) { //compound -- property = the compounds formula
 
 
 
+}
 }
