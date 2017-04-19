@@ -134,7 +134,7 @@ function getElement(elemSymbol) {
     document.getElementById("masses").innerHTML = elem.mass;
 }
 
-function Compound(formula); {
+function Compound(formula) {
     this.formula = formula;
 }
 var compounds = new Array(59);
