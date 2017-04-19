@@ -206,12 +206,13 @@ compounds[57] = new Compound("C6H5CH3");
 compounds[58] = new Compound("C5H11NO2");
 compounds[59] = new Compound("H2O");
 
-function Cmpd(formula) { //compound -- property = the compounds formula
+function getCmpd(formula) { //compound -- property = the compounds formula
     var str = []; //str = string
     for (i = 0; i < compounds.length; i++) {
+
         var x;
         //lets try H20
-        formula.charAt(i) = x;
+        x = formula.charAt(i);
         if (x === NaN) { //in the formula H20, the the first character[0] is an H = NaN
             if (formula.charAt(i++) == NaN) { //checking to see if the second character in the string is not a number well
                 str.unshift(formula.substring(i, i++)); //if the first two characters are both NaN, substring the formula at the first and second character
@@ -237,4 +238,5 @@ function Cmpd(formula) { //compound -- property = the compounds formula
 
 
 }
+    return str;
 }
