@@ -1,8 +1,9 @@
 function Element(symbol, aNum, mass) {
     this.symbol = symbol;
     this.aNum = aNum;
-    this.mass = mass
+    this.mass = mass;
 }
+
 var elements = new Array(109);
 elements[0] = new Element("H", 1, 1.01);
 elements[1] = new Element("He", 2, 4.00);
@@ -135,6 +136,79 @@ function getElement(elemSymbol) {
     document.getElementById("atoms").innerHTML = elem.symbol;
     document.getElementById("masses").innerHTML = elem.mass;
 }
+
+function Compound(formula); {
+ this.formula = formula;
+}
+
+var compounds = new Array(59);
+compounds[0] = new Compound("C19H29COOH");
+compounds[1] = new Compound("C12H10");
+compounds[2] = new Compound("C12H6O2");
+compounds[3] = new Compound("C12H8");
+compounds[4] = new Compound("CH3CHO");
+compounds[5] = new Compound("C8H9NO");
+compounds[6] = new Compound("CH3COOH");
+compounds[7] = new Compound("CH3COCH3");
+compounds[8] = new Compound("CH3CN");
+compounds[9] = new Compound("C8H8O");
+compounds[10] = new Compound("C6H5CHO");
+compounds[11] = new Compound("C6H6");
+compounds[12] = new Compound("C6H5COOH");
+compounds[13] = new Compound("C7H8O");
+compounds[14] = new Compound("C6H5Br");
+compounds[15] = new Compound("CH3Br");
+compounds[16] = new Compound("C4H8O");
+compounds[17] = new Compound("C4H10");
+compounds[18] = new Compound("C4H10O");
+compounds[19] = new Compound("CO2");
+compounds[20] = new Compound("H2CO3");
+compounds[21] = new Compound("C6H10O5");
+//compounds[] = new Compound("C2HCl3O.H2O");
+compounds[22] = new Compound("C2H3Cl");
+compounds[23] = new Compound("CHCl3");
+//compounds[] = new Compound("C3H4OH(COOH)3");
+compounds[24] = new Compound("C6H12");
+compounds[25] = new Compound("C4H10O");
+compounds[26] = new Compound("C2H6");
+compounds[27] = new Compound("CH3CH2OH");
+compounds[28] = new Compound("C2H4");
+compounds[29] = new Compound("C21H20BrN3");
+compounds[30] = new Compound("C4H8O2");
+compounds[31] = new Compound("C2H7N");
+compounds[32] = new Compound("C8H10");
+compounds[33] = new Compound("C2H4");
+compounds[34] = new Compound("HOCH2CH2OH");
+compounds[35] = new Compound("HCHO");
+compounds[36] = new Compound("C6H12O6");
+compounds[37] = new Compound("C3H8O3");
+compounds[38] = new Compound("C3H8O3");
+compounds[39] = new Compound("C7H16");
+compounds[40] = new Compound("C6H14");
+//compounds[] = new Compound("NH2CH(C4H5N2)COOH");
+compounds[41] = new Compound("C10H18O");
+//compounds[] = new Compound("CH3CH(OH)COOH");
+compounds[42] = new Compound("C12H22O11");
+compounds[43] = new Compound("C6H14N2O2");
+compounds[44] = new Compound("C4H2O3");
+compounds[45] = new Compound("CH4");
+compounds[46] = new Compound("CH3OH");
+compounds[47] = new Compound("C3H6O2");
+//compounds[] = new Compound("CH3CH(CH3)CH3]</option");
+compounds[48] = new Compound("C10H8]");
+compounds[49] = new Compound("C8H18");
+compounds[50] = new Compound("C5H12");
+compounds[51] = new Compound("CH3CONHC6H4OC2H5");
+compounds[52] = new Compound("C3H8");
+compounds[53] = new Compound("CH3CH2COOH");
+compounds[54] = new Compound("C7H6O3");
+compounds[55] = new Compound("C8H8");
+compounds[56] = new Compound("C12H22O11");
+compounds[57] = new Compound("C6H5CH3");
+compounds[58] = new Compound("C5H11NO2");
+compounds[59] = new Compound("H2O");
+
+
 
 function getCompound(comp) {
     //var a = document.getElementById("compounds");
