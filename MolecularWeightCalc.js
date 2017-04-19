@@ -206,7 +206,7 @@ compounds[59] = new Compound("H2O");
 
 function Cmpd(formula) { //compound -- property = the compounds formula
     var str = []; //str = string
-    for (i = 0; i < compounds.lenth; i++) {
+    for (i = 0; i < compounds.length; i++) {
         var x;
         //lets try H20
         formula.charAt(i) = x;
