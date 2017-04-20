@@ -211,10 +211,36 @@ compounds[59] = new Compound("H2O");
 
 function getCmpd(formula) { //compound -- property = the compounds formula
     var str = []; //str = string -- want to be able to store information in this string
+    var x = [];
+        var elementInfo = [];
     for (i = 0; i < compounds.length; i++) {
-        var x;
         //lets try H20
         x = formula.charAt(i);
+        y = formula.charAt(i+1);
+        if (y != y.toUpperCase()) {
+            var z = x+y;
+             for (i = 0; i <= 109; i++) {
+            if (elements[i].symbol == z) {
+              elementInfo.push(elements[i].symbol);
+              elementInfo.push(elements[i].mass);
+                //break;
+            }
+        }
+        }
+        else if (x == x.toUpperCase() && y != NaN) {
+        for (i = 0; i <= 109; i++) {
+            if (elements[i].symbol == x) {
+              elementInfo.push(elements[i].symbol);
+              elementInfo.push(elements[i].mass);
+                //break;
+            }
+        }
+
+        }
+            else {
+                elementInfo.push(x);
+            }
+
         if (x === NaN) { //in the formula H20, the the first character[0] is an H = NaN
             if (formula.charAt(i++) == NaN) { //checking to see if the second character in the string is not a number well
                 str.unshift(formula.substring(i, i++));
