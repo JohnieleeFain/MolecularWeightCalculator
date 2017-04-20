@@ -239,11 +239,11 @@ function getCmpd(formula) { //compound -- property = the compounds formula
             var elem;
             if (str[i] === NaN) {
                 elem = getElement(str[i]) //get element object
-                if (str[i++] === Number) {
-                    str.mass = elem.mass * str[i++];
+                if (str[i++] === Number) { //if the second character in the string is a number
+                    str.mass = elem.mass * str[i++]; //multiply the atomic mass of the element with the second character
                 }
                 else {
-                    elem.mass = "subtotal";
+                    elem.mass = "subtotal"; //if the second character is not a number, return the mass of the element
                 }
             }
         }
