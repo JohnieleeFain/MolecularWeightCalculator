@@ -3,7 +3,6 @@ function Element(symbol, aNum, mass) {
     this.aNum = aNum;
     this.mass = mass;
 }
-
 var elements = new Array(109);
 elements[0] = new Element("H", 1, 1.01);
 elements[1] = new Element("He", 2, 4.00);
@@ -121,7 +120,6 @@ elements[108] = new Element("Mt", 109, 268);
 //console.log(msg);
 //document.getElementById("atoms").innerHTML = msg;
 //}
-
 function getElement(elemSymbol) {
     //var value = a.options[a.selectedIndex].value;
     var elem = null;
@@ -141,7 +139,6 @@ function getElement(elemSymbol) {
 function Compound(formula) {
     this.formula = formula;
 }
-
 var compounds = new Array(59);
 compounds[0] = new Compound("C19H29COOH");
 compounds[1] = new Compound("C12H10");
@@ -212,40 +209,37 @@ compounds[59] = new Compound("H2O");
 function getCmpd(formula) { //compound -- property = the compounds formula
     var str = []; //str = string -- want to be able to store information in this string
     var x = [];
-        var elementInfo = [];
+    var elementInfo = [];
     for (i = 0; i < compounds.length; i++) {
         //lets try H20
         x = formula.charAt(i);
-        y = formula.charAt(i+1);
+        y = formula.charAt(i + 1);
         if (y != y.toUpperCase()) {
-            var z = x+y;
-             for (i = 0; i <= 109; i++) {
-            if (elements[i].symbol == z) {
-              elementInfo.push(elements[i].symbol);
-              elementInfo.push(elements[i].mass);
-                //break;
+            var z = x + y;
+            for (i = 0; i <= 109; i++) {
+                if (elements[i].symbol == z) {
+                    elementInfo.push(elements[i].symbol);
+                    elementInfo.push(elements[i].mass);
+                    //break;
+                }
             }
-        }
         }
         else if (x == x.toUpperCase() && y != NaN) {
-        for (i = 0; i <= 109; i++) {
-            if (elements[i].symbol == x) {
-              elementInfo.push(elements[i].symbol);
-              elementInfo.push(elements[i].mass);
-                //break;
+            for (i = 0; i <= 109; i++) {
+                if (elements[i].symbol == x) {
+                    elementInfo.push(elements[i].symbol);
+                    elementInfo.push(elements[i].mass);
+                    //break;
+                }
             }
         }
-
+        else {
+            elementInfo.push(x);
         }
-            else {
-                elementInfo.push(x);
-            }
-
         if (x === NaN) { //in the formula H20, the the first character[0] is an H = NaN
             if (formula.charAt(i++) == NaN) { //checking to see if the second character in the string is not a number well
                 str.unshift(formula.substring(i, i++));
                 //if the first two characters are both NaN, substring the formula at the first and second character -- and store these characters in str
-
                 //array.unshift adds to the beginning of an array
             }
             else {
