@@ -3,6 +3,7 @@ function Element(symbol, aNum, mass) {
     this.aNum = aNum;
     this.mass = mass;
 }
+
 var elements = new Array(109);
 elements[0] = new Element("H", 1, 1.01);
 elements[1] = new Element("He", 2, 4.00);
@@ -120,6 +121,7 @@ elements[108] = new Element("Mt", 109, 268);
 //console.log(msg);
 //document.getElementById("atoms").innerHTML = msg;
 //}
+
 function getElement(elemSymbol) {
     //var value = a.options[a.selectedIndex].value;
     var elem = null;
@@ -132,13 +134,14 @@ function getElement(elemSymbol) {
     document.getElementById("atomic").innerHTML = elem.aNum;
     document.getElementById("atoms").innerHTML = elem.symbol;
     document.getElementById("masses").innerHTML = elem.mass;
-    document.getElementById("subtotal").innerHTML=elem.mass;
-    document.getElementById("number").innerHTML= 1;
+    document.getElementById("subtotal").innerHTML = elem.mass;
+    document.getElementById("number").innerHTML = 1;
 }
 
 function Compound(formula) {
     this.formula = formula;
 }
+
 var compounds = new Array(59);
 compounds[0] = new Compound("C19H29COOH");
 compounds[1] = new Compound("C12H10");
@@ -209,46 +212,41 @@ compounds[59] = new Compound("H2O");
 function getCmpd(formula) { //compound -- property = the compounds formula
     var str = []; //str = string
     for (i = 0; i < compounds.length; i++) {
-
         var x;
         //lets try H20
         x = formula.charAt(i);
         if (x === NaN) { //in the formula H20, the the first character[0] is an H = NaN
             if (formula.charAt(i++) == NaN) { //checking to see if the second character in the string is not a number well
                 str.unshift(formula.substring(i, i++)); //if the first two characters are both NaN, substring the formula at the first and second character
-
                 //array.unshift adds to the beginning of an array
             }
             else {
                 str.unshift(formula.charAt(i)); //substring/parse the string at its first character
             }
         }
-        if (x / 1 != NaN){ //if x is not equal to NaN --> which really means, if x is a number
-    }
-    else if (x === Number) { //if x is a numbr
-        if (formula.charAt(i++) === Number) { //if the second character in the string is also a number
-            str.unshift(formula.substring(i, i++)); //parse the string at the first and second characters
+        if (x / 1 != NaN) { //if x is not equal to NaN --> which really means, if x is a number
         }
-    }
-    else {
-        str.unshift(formula.charAt(i)); //parse the string at the first character
-    }
-    //as of now, the result should be: str = ["H", "2", "O"]
+        else if (x === Number) { //if x is a numbr
+            if (formula.charAt(i++) === Number) { //if the second character in the string is also a number
+                str.unshift(formula.substring(i, i++)); //parse the string at the first and second characters
+            }
+        }
+        else {
+            str.unshift(formula.charAt(i)); //parse the string at the first character
+        }
+        //as of now, the result should be: str = ["H", "2", "O"]
         for (i = 0; i < str.length; i++) {
-
             var elem;
-
             if (str[i] === NaN) {
                 elem = getElement(str[i]) //get element object
                 if (str[i++] === Number) {
-                str.mass = elem.mass * str[i++];
+                    str.mass = elem.mass * str[i++];
                 }
                 else {
                     elem.mass = "subtotal";
                 }
-                }
+            }
         }
-
-}
+    }
     return str;
 }
