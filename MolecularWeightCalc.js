@@ -210,18 +210,20 @@ compounds[58] = new Compound("C5H11NO2");
 compounds[59] = new Compound("H2O");
 
 function getCmpd(formula) { //compound -- property = the compounds formula
-    var str = []; //str = string
+    var str = []; //str = string -- want to be able to store information in this string
     for (i = 0; i < compounds.length; i++) {
         var x;
         //lets try H20
         x = formula.charAt(i);
         if (x === NaN) { //in the formula H20, the the first character[0] is an H = NaN
             if (formula.charAt(i++) == NaN) { //checking to see if the second character in the string is not a number well
-                str.unshift(formula.substring(i, i++)); //if the first two characters are both NaN, substring the formula at the first and second character
+                str.unshift(formula.substring(i, i++));
+                //if the first two characters are both NaN, substring the formula at the first and second character -- and store these characters in str
+
                 //array.unshift adds to the beginning of an array
             }
             else {
-                str.unshift(formula.charAt(i)); //substring/parse the string at its first character
+                str.unshift(formula.charAt(i)); //substring/parse the string at its first character -- store the first character in str
             }
         }
         if (x / 1 != NaN) { //if x is not equal to NaN --> which really means, if x is a number
