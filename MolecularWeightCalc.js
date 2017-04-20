@@ -234,8 +234,20 @@ function getCmpd(formula) { //compound -- property = the compounds formula
         str.unshift(formula.charAt(i)); //parse the string at the first character
     }
     //as of now, the result should be: str = ["H", "2", "O"]
+        for (i = 0; i < str.length; i++) {
 
+            var elem;
 
+            if (str[i] === NaN) {
+                elem = getElement(str[i]) //get element object
+                if (str[i++] === Number) {
+                str.mass = elem.mass * str[i++];
+                }
+                else {
+                    elem.mass = "subtotal";
+                }
+                }
+        }
 
 }
     return str;
