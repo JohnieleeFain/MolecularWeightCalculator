@@ -220,7 +220,7 @@ function getCmpd(formula) { //compound -- property = the compounds formula
                 if (elements[i].symbol == z) {
                     elementInfo.push(elements[i].symbol);
                     elementInfo.push(elements[i].mass);
-                    //break;
+                    break;
                 }
             }
         }
@@ -229,7 +229,7 @@ function getCmpd(formula) { //compound -- property = the compounds formula
                 if (elements[i].symbol == x) {
                     elementInfo.push(elements[i].symbol);
                     elementInfo.push(elements[i].mass);
-                    //break;
+                    break;
                 }
             }
         }
