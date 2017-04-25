@@ -239,45 +239,4 @@ function getCmpd(formula) { //compound -- property = the compounds formula
             console.log(elementInfo);
         }
     }
-
-
-/**     if (x === NaN) { //in the formula H20, the the first character[0] is an H = NaN
-            if (formula.charAt(i++) == NaN) { //checking to see if the second character in the string is not a number well
-                str.unshift(formula.substring(i, i++));
-                //if the first two characters are both NaN, substring the formula at the first and second character -- and store these characters in str
-                //array.unshift adds to the beginning of an array
-            }
-            else {
-                str.unshift(formula.charAt(i)); //substring/parse the string at its first character -- store the first character in str
-            }
-        }
-        if (x / 1 != NaN) { //if x is not equal to NaN --> which really means, if x is a number
-        }
-        else if (x === Number) { //if x is a numbr
-            if (formula.charAt(i++) === Number) { //if the second character in the string is also a number
-                str.unshift(formula.substring(i, i++)); //parse the string at the first and second characters
-            }
-        }
-        else {
-            str.unshift(formula.charAt(i)); //parse the string at the first character
-        }
-        //as of now, the result should be: str = ["H", "2", "O"]
-        for (i = 0; i < str.length; i++) {
-            var elem;
-            if (str[i] === NaN) {
-                elem = getElement(str[i]) //get element object
-                if (str[i++] === Number) { //if the second character in the string is a number
-                    str.mass = elem.mass * str[i++]; //multiply the atomic mass of the element with the second character
-                }
-                else {
-                    elem.mass = "subtotal"; //if the second character is not a number, return the mass of the element
-                }
-            }
-        }
-    return str;
-    }
-
-/**
-
-
-
+}
