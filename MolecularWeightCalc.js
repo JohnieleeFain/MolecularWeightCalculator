@@ -87,7 +87,7 @@ elements[79] = new Element("Hg", 80, 200.59);
 elements[80] = new Element("Ti", 81, 204.38);
 elements[81] = new Element("Pb", 82, 207.2);
 elements[82] = new Element("Bi", 83, 208.98);
-elements[83] = new Element("Po", 84, 209)
+elements[83] = new Element("Po", 84, 209);
 elements[84] = new Element("At", 85, 210);
 elements[85] = new Element("Rn", 86, 222);
 elements[86] = new Element("Fr", 87, 223);
@@ -225,7 +225,7 @@ function getCmpd(formula) { //compound -- property = the compounds formula
             }
         }
         else if(x === x.toString().toUpperCase() && parseInt(y) != NaN) {
-            for (i = 0; i <= 108; i++) {
+            for (i = 0; i <= 5; i++) {
                 if (x == elements[i].symbol) {
                     elementInfo.push(elements[i].symbol);
                     elementInfo.push(elements[i].mass);
