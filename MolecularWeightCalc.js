@@ -224,7 +224,7 @@ function getCmpd(formula) { //compound -- property = the compounds formula
                 }
             }
         }
-        else if (x == x.toUpperCase() && y != NaN) {
+        else if (x === x.toString().toUpperCase() && parseInt(y) != NaN) {
             for (i = 0; i <= 109; i++) {
                 if (elements[i].symbol == x) {
                     elementInfo.push(elements[i].symbol);
