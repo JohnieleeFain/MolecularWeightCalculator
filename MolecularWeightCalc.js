@@ -121,7 +121,7 @@ elements[108] = new Element("Mt", 109, 268);
 //console.log(msg);
 //document.getElementById("atoms").innerHTML = msg;
 //}
-function getElement(elemSymbol) {
+function getElement(elemSymbol, number = 1) {
     //var value = a.options[a.selectedIndex].value;
     var elem = null;
     for (var i = 0; i < elements.length; i++) {
@@ -135,7 +135,7 @@ function getElement(elemSymbol) {
             var cell4 = row.insertCell(3);
             var cell5 = row.insertCell(4);
             var cell6 = row.insertCell(5);
-            cell1.innerHTML = elem.number;
+            cell1.innerHTML = number;
             cell2.innerHTML = elem.symbol;
             cell3.innerHTML = elem.aNum;
             cell4.innerHTML = elem.mass;
@@ -229,7 +229,8 @@ function getCmpd(formula) { //compound -- property = the compounds formula
     for (var i = 0; i < formula.length; i++ ){
         var e = formula.charAt(i);
         console.log(e);
-        getElement(e);
+        getElement(e, 2);
+
     }
 
 
