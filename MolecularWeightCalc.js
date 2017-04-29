@@ -87,7 +87,7 @@ elements[79] = new Element("Hg", 80, 200.59);
 elements[80] = new Element("Ti", 81, 204.38);
 elements[81] = new Element("Pb", 82, 207.2);
 elements[82] = new Element("Bi", 83, 208.98);
-elements[83] = new Element("Po", 84, 209);
+elements[83] = new Element("Po", 84, 209)
 elements[84] = new Element("At", 85, 210);
 elements[85] = new Element("Rn", 86, 222);
 elements[86] = new Element("Fr", 87, 223);
@@ -113,6 +113,7 @@ elements[105] = new Element("Sg", 106, 266);
 elements[106] = new Element("Bh", 107, 264);
 elements[107] = new Element("Hs", 108, 269);
 elements[108] = new Element("Mt", 109, 268);
+
 //function getElement(elem) {
 //var msg = document.getElementById("elements").value;
 //var value = a.options[a.selectedIndex].value;
@@ -123,17 +124,17 @@ elements[108] = new Element("Mt", 109, 268);
 function getElement(elemSymbol) {
     //var value = a.options[a.selectedIndex].value;
     var elem = null;
-    for (i = 0; i < elements.length; i++) {
+    for (var i = 0; i < elements.length; i++) {
         if (elements[i].symbol === elemSymbol) {
             elem = elements[i];
+            document.getElementById("atomic").innerHTML = elem.aNum;
+            document.getElementById("atoms").innerHTML = elem.symbol;
+            document.getElementById("masses").innerHTML = elem.mass;
+            document.getElementById("subtotal").innerHTML = elem.mass;
+            document.getElementById("number").innerHTML = 1;
             break;
         }
     }
-    document.getElementById("atomic").innerHTML = elem.aNum;
-    document.getElementById("atoms").innerHTML = elem.symbol;
-    document.getElementById("masses").innerHTML = elem.mass;
-    document.getElementById("subtotal").innerHTML = elem.mass;
-    document.getElementById("number").innerHTML = 1;
 }
 
 function Compound(formula) {
@@ -206,39 +207,88 @@ compounds[57] = new Compound("C6H5CH3");
 compounds[58] = new Compound("C5H11NO2");
 compounds[59] = new Compound("H2O");
 
-function getCmpd(formula) { //compound -- property = the compounds formula
-    var str = []; //str = string -- want to be able to store information in this string
+function getCmpd(formula) {//compound -- property = the compounds formula
+    for (var i = 0; i < formula.length; i++ ){
+        var e = formula.charAt(i);
+        console.log(e);
+        getElement(e);
+    }
+
+
+
+   //for( j = 0; j < elements.length; j++){
+     // if( elements[j].symbol == e) {
+       //   console.log("found");
+    //  }
+      /* else {
+           console.log(not found);
+       } */
+   //}
+   // document.getElementById(element)
+//}
+    /*    var str = []; //str = string -- want to be able to store information in this string
     var x = [];
     var elementInfo = [];
     for (i = 0; i < compounds.length; i++) {
         //lets try H20
-        x = formula.charAt(i); //set x to the first charcter in the string -- H
-        y = formula.charAt(i + 1); //set y to the second character in the string -- 2
-        if (y != y.toUpperCase()) { //if y is not equal to another uppercase (like an element Cl (chlorine))
-            var z = x + y; //let z equal the first chacter and the second character -- H2
-            for (i = 0; i <= 109; i++) { //this for loop calls the elements
+        x = formula.charAt(i);
+        y = formula.charAt(i + 1);
+        if (y != y.toUpperCase()) {
+            var z = x + y;
+            for (i = 0; i <= 109; i++) {
                 if (elements[i].symbol == z) {
-                    elementInfo.push(elements[i].symbol); //stores the information of the element (the symbol) into the string elementInfo
-                    elementInfo.push(elements[i].mass); //stores the mass into the string elementInfo
+                    elementInfo.push(elements[i].symbol);
+                    elementInfo.push(elements[i].mass);
                     break;
                 }
             }
         }
-
-        else if(x === x.toString().toUpperCase() && parseInt(y) != NaN) {
-            for (i = 0; i <= 5; i++) {
-                if (x == elements[i].symbol) {
-
+        else if (x == x.toUpperCase() && y != NaN) {
+            for (i = 0; i <= 109; i++) {
+                if (elements[i].symbol == x) {
                     elementInfo.push(elements[i].symbol);
                     elementInfo.push(elements[i].mass);
-                    var i = 0;
-                    //break;
+                    break;
                 }
             }
         }
         else {
             elementInfo.push(x);
-            console.log(elementInfo);
+        }
+        if (x === NaN) { //in the formula H20, the the first character[0] is an H = NaN
+            if (formula.charAt(i++) == NaN) { //checking to see if the second character in the string is not a number well
+                str.unshift(formula.substring(i, i++));
+                //if the first two characters are both NaN, substring the formula at the first and second character -- and store these characters in str
+                //array.unshift adds to the beginning of an array
+            }
+            else {
+                str.unshift(formula.charAt(i)); //substring/parse the string at its first character -- store the first character in str
+            }
+        }
+        if (x / 1 != NaN) { //if x is not equal to NaN --> which really means, if x is a number
+        }
+        else if (x === Number) { //if x is a numbr
+            if (formula.charAt(i++) === Number) { //if the second character in the string is also a number
+                str.unshift(formula.substring(i, i++)); //parse the string at the first and second characters
+            }
+        }
+        else {
+            str.unshift(formula.charAt(i)); //parse the string at the first character
+        }
+        //as of now, the result should be: str = ["H", "2", "O"]
+        for (i = 0; i < str.length; i++) {
+            var elem;
+            if (str[i] === NaN) {
+                elem = getElement(str[i]) //get element object
+                if (str[i++] === Number) { //if the second character in the string is a number
+                    str.mass = elem.mass * str[i++]; //multiply the atomic mass of the element with the second character
+                }
+                else {
+                    elem.mass = "subtotal"; //if the second character is not a number, return the mass of the element
+                }
+            }
         }
     }
+    return str;
+    */
 }
