@@ -114,15 +114,7 @@ elements[106] = new Element("Bh", 107, 264);
 elements[107] = new Element("Hs", 108, 269);
 elements[108] = new Element("Mt", 109, 268);
 
-//function getElement(elem) {
-//var msg = document.getElementById("elements").value;
-//var value = a.options[a.selectedIndex].value;
-//var msg = elem;
-//console.log(msg);
-//document.getElementById("atoms").innerHTML = msg;
-//}
 function getElement(elemSymbol, number = 1) {
-    //var value = a.options[a.selectedIndex].value;
     var elem = null;
     for (var i = 0; i < elements.length; i++) {
         if (elements[i].symbol === elemSymbol) {
@@ -187,10 +179,8 @@ compounds[18] = new Compound("C4H10O");
 compounds[19] = new Compound("CO2");
 compounds[20] = new Compound("H2CO3");
 compounds[21] = new Compound("C6H10O5");
-//compounds[] = new Compound("C2HCl3O.H2O"); Chloral Hydrate
 compounds[22] = new Compound("C2H3Cl");
 compounds[23] = new Compound("CHCl3");
-//compounds[] = new Compound("C3H4OH(COOH)3"); Citric Acid
 compounds[24] = new Compound("C6H12");
 compounds[25] = new Compound("C4H10O");
 compounds[26] = new Compound("C2H6");
@@ -208,16 +198,13 @@ compounds[37] = new Compound("C3H8O3");
 compounds[38] = new Compound("C3H8O3");
 compounds[39] = new Compound("C7H16");
 compounds[40] = new Compound("C6H14");
-//compounds[] = new Compound("NH2CH(C4H5N2)COOH"); Histidine
 compounds[41] = new Compound("C10H18O");
-//compounds[] = new Compound("CH3CH(OH)COOH"); Latic Acid
 compounds[42] = new Compound("C12H22O11");
 compounds[43] = new Compound("C6H14N2O2");
 compounds[44] = new Compound("C4H2O3");
 compounds[45] = new Compound("CH4");
 compounds[46] = new Compound("CH3OH");
 compounds[47] = new Compound("C3H6O2");
-//compounds[] = new Compound("CH3CH(CH3)CH3]</option"); 2-Methylpropene
 compounds[48] = new Compound("C10H8");
 compounds[49] = new Compound("C8H18");
 compounds[50] = new Compound("C5H12");
@@ -233,12 +220,11 @@ compounds[59] = new Compound("H2O");
 
 function getCmpd(formula) { //compound -- property = the compounds formula
     for (var i = 0; i < formula.length; i++ ){
-        var e = formula.charAt(i);
+        var e = formula.charAt(i); //e is defined as the character at certain indexes of the compound formula
         console.log(e);
-        getElement(e, 2);
+        getElement(e, 2); //default at two right now
 
     }
-
 
 
    //for( j = 0; j < elements.length; j++){
