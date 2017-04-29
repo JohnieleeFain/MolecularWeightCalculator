@@ -127,6 +127,12 @@ function getElement(elemSymbol) {
     for (var i = 0; i < elements.length; i++) {
         if (elements[i].symbol === elemSymbol) {
             elem = elements[i];
+            //function myTable() {
+               // var table = document.getElementById("rows");
+               // var row = table.insertRow(1);
+                //var cell = row.insertCell(0);
+                //var cell2 = row.insertCell(1);
+           // }
             var table = document.getElementById("rows");
             var row = table.insertRow(1);
             var cell = row.insertCell(0);
