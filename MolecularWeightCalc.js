@@ -127,11 +127,14 @@ function getElement(elemSymbol) {
     for (var i = 0; i < elements.length; i++) {
         if (elements[i].symbol === elemSymbol) {
             elem = elements[i];
-            document.getElementById("atomic").innerHTML = elem.aNum;
-            document.getElementById("atoms").innerHTML = elem.symbol;
-            document.getElementById("masses").innerHTML = elem.mass;
-            document.getElementById("subtotal").innerHTML = elem.mass;
-            document.getElementById("number").innerHTML = 1;
+            var table = document.getElementById("rows");
+            var row = table.insertRow(1);
+            var cell = row.insertCell(0);
+           // document.getElementById("atomic").innerHTML = elem.aNum;
+          //  document.getElementById("atoms").innerHTML = elem.symbol;
+           // document.getElementById("masses").innerHTML = elem.mass;
+           // document.getElementById("subtotal").innerHTML = elem.mass;
+           // document.getElementById("number").innerHTML = 1;
             break;
         }
     }
@@ -207,7 +210,7 @@ compounds[57] = new Compound("C6H5CH3");
 compounds[58] = new Compound("C5H11NO2");
 compounds[59] = new Compound("H2O");
 
-function getCmpd(formula) {//compound -- property = the compounds formula
+function getCmpd(formula) { //compound -- property = the compounds formula
     for (var i = 0; i < formula.length; i++ ){
         var e = formula.charAt(i);
         console.log(e);
