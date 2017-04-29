@@ -129,7 +129,21 @@ function getElement(elemSymbol) {
             elem = elements[i];
             var table = document.getElementById("rows");
             var row = table.insertRow(1);
-            var cell = row.insertCell(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            cell1.innerHTML = elem.number;
+            cell2.innerHTML = elem.symbol;
+            cell3.innerHTML = elem.aNum;
+            cell4.innerHTML = elem.mass;
+            cell5.innerHTML = elem.mass;
+           // cell2.innerHTML = elem.symbol;
+        //    cell3.innerHTML = elem.mass;
+
+
            // document.getElementById("atomic").innerHTML = elem.aNum;
           //  document.getElementById("atoms").innerHTML = elem.symbol;
            // document.getElementById("masses").innerHTML = elem.mass;
@@ -139,6 +153,7 @@ function getElement(elemSymbol) {
         }
     }
 }
+
 
 function Compound(formula) {
     this.formula = formula;
