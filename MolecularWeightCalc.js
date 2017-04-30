@@ -228,7 +228,13 @@ function getCmpd(formula) { //compound -- property = the compounds formula
         totalMolecularWeight += subtotalMass;
 
 
-
     }
+    var table = document.getElementById("rows");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.colSpan = "4";
+            cell2.innerHTML = totalMolecularWeight;
+            cell1.innerHTML = "Molecular Weight:";
 console.log(totalMolecularWeight);
 }
