@@ -131,14 +131,8 @@ function getElement(elemSymbol, number = 1) {
             cell2.innerHTML = elem.symbol;
             cell3.innerHTML = elem.aNum;
             cell4.innerHTML = elem.mass;
-            cell5.innerHTML = elem.mass;
+            cell5.innerHTML = elem.mass * number;
 
-
-           // document.getElementById("atomic").innerHTML = elem.aNum;
-          //  document.getElementById("atoms").innerHTML = elem.symbol;
-           // document.getElementById("masses").innerHTML = elem.mass;
-           // document.getElementById("subtotal").innerHTML = elem.mass;
-           // document.getElementById("number").innerHTML = 1;
             break;
         }
     }
