@@ -133,7 +133,7 @@ function getElement(elemSymbol, number = 1) {
             cell4.innerHTML = elem.mass;
             cell5.innerHTML = elem.mass * number;
 
-            break;
+            return (elem.mass * number);
         }
     }
 }
@@ -205,6 +205,7 @@ compounds[58] = new Compound("C5H11NO2");
 compounds[59] = new Compound("H2O");
 
 function getCmpd(formula) { //compound -- property = the compounds formula
+    var totalMolecularWeight = 0;
     for (var i = 0; i < formula.length; i++ ){
         var e = formula.charAt(i); //e is defined as the character at certain indexes of the compound formula
         console.log(e);
@@ -223,7 +224,11 @@ function getCmpd(formula) { //compound -- property = the compounds formula
         if(isNaN(doubleDigit)){
             doubleDigit = 1
         }
-        getElement(e, doubleDigit);
+      var subtotalMass = getElement(e, doubleDigit);
+        totalMolecularWeight += subtotalMass;
+
+
 
     }
+console.log(totalMolecularWeight);
 }
