@@ -6,18 +6,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel = "stylesheet " href = "MolecularWeightCalc.css" >
+    <link rel="stylesheet " href="MolecularWeightCalc.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="MolecularWeightCalc.js"></script>
 </head>
 
 <body>
-    <p/><p/>
+    <p/>
+    <p/>
     <div class="container">
         <h1>Molecular Weight Calculator</h1>
-        <p>Find the molecular weight of common organic compounds and atomic mass of the listed elements.</p>
-                    <select id="elements">
+        <p>Find the molecular weight of common organic compounds and the atomic mass of the listed elements.</p>
+        <select id="elements">
                         <option value=Ac>Actinium [Ac]</option>
                         <option value=Al>Aluminum [Al]</option>
                         <option value=Am>Americium [Am]</option>
@@ -130,9 +131,9 @@
 
 
                     </select>
-<button type="button" onclick="getElement(document.getElementById('elements').value)">Get Element</button>
+        <button type="button" onclick="getElement(document.getElementById('elements').value)">Get Element</button>
         <p></p>
-                        <select id="compounds">
+        <select id="compounds">
                         <option value="C19H29COOH">Abietic Acid [C19H29COOH]</option>
                         <option value="C12H10">Acenaphthene [C12H10]</option>
                         <option value="C12H6O2">Ancenaphthoquinone [C12H6O2]</option>
@@ -191,24 +192,33 @@
 
 
 </select>
-<button type="button" onclick="getCmpd(document.getElementById('compounds').value)">Get Compound</button>
+        <button type="button" onclick="getCmpd(document.getElementById('compounds').value)">Get Compound</button>
         <p></p>
 
 
-<div id="output">Selected Option</div>
+        <div id="output">Selected Option</div>
 
         <div id="result"></div>
         <div id="scoreboard">
-        <table class="table" id = "rows">
-            <tr>
-                <td>Atom:</td><td># of Atoms:</td><td>Atomic #</td><td>Atomic Mass:</td> <td>Subtotal Mass:</td>
-            </tr>
-            <tr>
-                <td id="atoms"></td><td id="number"></td><td id="atomic"></td><td id="masses"></td><td id="subtotal"></td>
-            </tr>
+            <table class="table" id="rows">
+                <tr>
+                    <td>Atom:</td>
+                    <td># of Atoms:</td>
+                    <td>Atomic #</td>
+                    <td>Atomic Mass:</td>
+                    <td>Subtotal Mass:</td>
+                </tr>
+                <tr>
+                    <td id="atoms"></td>
+                    <td id="number"></td>
+                    <td id="atomic"></td>
+                    <td id="masses"></td>
+                    <td id="subtotal"></td>
+                </tr>
 
-        </table>
+            </table>
         </div>
     </div>
 </body>
+
 </html>
