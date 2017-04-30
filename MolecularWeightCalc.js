@@ -1,3 +1,11 @@
+/**
+ * [[Represents an Element from the Periodic Table.]]
+ * @author [[Johnie lee Fain & Ella Gerlach]]
+ * @constructor
+ * @param {string} symbol [[The element symbol.]]
+ * @param {number} aNum   [[The element atomic number.]]
+ * @param {number} mass   [[The element atomic mass.]]
+ */
 function Element(symbol, aNum, mass) {
     this.symbol = symbol;
     this.aNum = aNum;
@@ -115,6 +123,13 @@ elements[106] = new Element("Bh", 107, 264);
 elements[107] = new Element("Hs", 108, 269);
 elements[108] = new Element("Mt", 109, 268);
 
+/**
+ * [[Pulls and verifies information from the elements array.]]
+ * @author [[Johnie lee Fain & Ella Gerlach]]
+ * @param   {string} elemSymbol [[Iterates through the elements array and recognizes the first index. ]]
+ * @param   {number} number = 1 [[Assigns an element the value of one unless passed other information.]]
+ * @returns {number} [[Calcualted the subtotal mass of a given element]]
+ */
 function getElement(elemSymbol, number = 1) {
     var elem = null;
     for (var i = 0; i < elements.length; i++) {
@@ -138,6 +153,12 @@ function getElement(elemSymbol, number = 1) {
     }
 }
 
+/**
+ * [[Represents a common organic compound from the Periodic Table.]]
+ * @author [[Ella Gerlach]]
+ * @constructor
+ * @param {string} formula [[The chemical compound formula.]]
+ */
 function Compound(formula) {
     this.formula = formula;
 }
@@ -198,6 +219,11 @@ compounds[51] = new Compound("C6H5CH3");
 compounds[52] = new Compound("C5H11NO2");
 compounds[53] = new Compound("H2O");
 
+/**
+ * [[Takes in the compound formula and parses the string into integers to send information to the getElement function to calculate molecular weight.]]
+ * @author [[Johnie lee Fain & Ella Gerlach]]
+ * @param {string} formula [[The chemical compound formula.]]
+ */
 function getCmpd(formula) { //compound -- property = the compounds formula
     var totalMolecularWeight = 0;
     for (var i = 0; i < formula.length; i++) {
