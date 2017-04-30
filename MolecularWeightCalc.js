@@ -235,11 +235,19 @@ function getCmpd(formula) { //compound -- property = the compounds formula
     for (var i = 0; i < formula.length; i++ ){
         var e = formula.charAt(i);
         console.log(e);
-        getElement(e, 2);
-
+        getElement(e);
     }
 
 
+
+//function calculateMolecularWeight(e) {
+   //for(var i = 0; i < formula.length; i++0{
+    //  (elem.mass * 2) + 16
+   //return;
+     //  }
+//
+    //multiply each atomic mass by the number of atoms in the formula and add up resulst ex H2O:  (2 * 1.01) + 16 = 18.02
+}
 
    //for( j = 0; j < elements.length; j++){
      // if( elements[j].symbol == e) {
