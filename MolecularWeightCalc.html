@@ -148,22 +148,17 @@
                         <option value="C6H6">Benzene [C6H6]</option>
                         <option value="C6H5COOH">Benzoic Acid [C6H5COOH]</option>
                         <option value="C7H8O">Benzyl Alcohol [C7H8O]</option>
-                        <option value="C6H5Br">Bromobenzene [C6H5Br]</option>
-                        <option value="CH3Br">Bromomethane [CH3Br]</option>
                         <option value="C4H8O">Butanal [C4H8O]</option>
                         <option value="C4H10">Butane [C4H10]</option>
                         <option value="C4H10O">2-Butanol [C4H10O]</option>
                         <option value="CO2">Carbon Dioxide [CO2]</option>
                         <option value="H2CO3">Carbonic Acid [H2CO3]</option>
                         <option value="C6H10O5">Cellulose [C6H10O5]</option>
-                        <option value="C2H3Cl">Chloroethene [C2H3Cl]</option>
-                        <option value="CHCl3">Chloroform [CHCl3]</option>
                         <option value="C6H12">Cyclohexane [C6H12]</option>
                         <option value="C4H10O">Diethyl Ether [C4H10O]</option>
                         <option value="C2H6">Ethane [C2H6]</option>
                         <option value="CH3CH2OH">Ethanol [CH3CH2OH]</option>
                         <option value="C2H4">Ethene [C2H4]</option>
-                        <option value="C21H20BrN3">Ethidium Bromide [C21H20BrN3]</option>
                         <option value="C4H8O2">Ethyl Acetate [C4H8O2]</option>
                         <option value="C2H7N">Ethylamine [C2H7N]</option>
                         <option value="C8H10">Ethylbenzene [C8H10]</option>
@@ -198,13 +193,15 @@
 </select>
 <button type="button" onclick="getCmpd(document.getElementById('compounds').value)">Get Compound</button>
         <p></p>
+
+
 <div id="output">Selected Option</div>
 
         <div id="result"></div>
         <div id="scoreboard">
         <table class="table" id = "rows">
             <tr>
-                <td># of Atoms:</td><td>Atom:</td><td>Atomic #</td><td>Molar Mass:</td> <td>Subtotal Mass:</td>
+                <td># of Atoms:</td><td>Atom:</td><td>Atomic #</td><td>Atomic Mass:</td> <td>Subtotal Mass:</td>
             </tr>
             <tr>
                 <td id="number"></td><td id="atoms"></td><td id="atomic"></td><td id="masses"></td><td id="subtotal"></td>
