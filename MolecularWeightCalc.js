@@ -120,7 +120,7 @@ function getElement(elemSymbol, number = 1) {
         if (elements[i].symbol === elemSymbol) {
             elem = elements[i];
             var table = document.getElementById("rows");
-            var row = table.insertRow(1);
+            var row = table.insertRow(-1);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);

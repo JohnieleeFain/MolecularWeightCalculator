@@ -18,3 +18,4 @@ QUnit.test("Get Element test", function (assert) {
     assert.equal(document.getElementById("screen").value, "H", "Passed - Expected H");
 });
 
+//Test for getting the attributes of a compound
