@@ -3,6 +3,7 @@ function Element(symbol, aNum, mass) {
     this.aNum = aNum;
     this.mass = mass;
 }
+
 var elements = new Array(109);
 elements[0] = new Element("H", 1, 1.01);
 elements[1] = new Element("He", 2, 4.00);
@@ -127,21 +128,20 @@ function getElement(elemSymbol, number = 1) {
             var cell4 = row.insertCell(3);
             var cell5 = row.insertCell(4);
             var cell6 = row.insertCell(5);
-            cell1.innerHTML = number;
-            cell2.innerHTML = elem.symbol;
+            cell1.innerHTML = elem.symbol;
+            cell2.innerHTML = number;
             cell3.innerHTML = elem.aNum;
             cell4.innerHTML = elem.mass;
             cell5.innerHTML = elem.mass * number;
-
             return (elem.mass * number);
         }
     }
 }
 
-
 function Compound(formula) {
     this.formula = formula;
 }
+
 var compounds = new Array(59);
 compounds[0] = new Compound("C19H29COOH");
 compounds[1] = new Compound("C12H10");
@@ -200,35 +200,30 @@ compounds[53] = new Compound("H2O");
 
 function getCmpd(formula) { //compound -- property = the compounds formula
     var totalMolecularWeight = 0;
-    for (var i = 0; i < formula.length; i++ ){
+    for (var i = 0; i < formula.length; i++) {
         var e = formula.charAt(i); //e is defined as the character at certain indexes of the compound formula
         console.log(e);
         var x = parseInt(formula.charAt(i + 1)); //making the variable a number
-
-        var doubleDigit = "" ; //string of variables
-        while (!isNaN(x) && i <= formula.length){ // if x is not not a number (techinically x is a number)
+        var doubleDigit = ""; //string of variables
+        while (!isNaN(x) && i <= formula.length) { // if x is not not a number (techinically x is a number)
             doubleDigit += x; //combining the numbers if there are two consecutive numbers in a row
-
             console.log(doubleDigit);
             i++
-            x = parseInt(formula.charAt(i+1));
-
+            x = parseInt(formula.charAt(i + 1));
         }
         doubleDigit = parseInt(doubleDigit);
-        if(isNaN(doubleDigit)){
+        if (isNaN(doubleDigit)) {
             doubleDigit = 1
         }
-      var subtotalMass = getElement(e, doubleDigit);
+        var subtotalMass = getElement(e, doubleDigit);
         totalMolecularWeight += subtotalMass;
-
-
     }
     var table = document.getElementById("rows");
-            var row = table.insertRow(-1);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            cell1.colSpan = "4";
-            cell2.innerHTML = totalMolecularWeight;
-            cell1.innerHTML = "Molecular Weight:";
-console.log(totalMolecularWeight);
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.colSpan = "4";
+    cell2.innerHTML = totalMolecularWeight;
+    cell1.innerHTML = "Molecular Weight:";
+    console.log(totalMolecularWeight);
 }
