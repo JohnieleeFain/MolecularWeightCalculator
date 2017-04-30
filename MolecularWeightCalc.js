@@ -138,8 +138,6 @@ function getElement(elemSymbol, number = 1) {
             cell3.innerHTML = elem.aNum;
             cell4.innerHTML = elem.mass;
             cell5.innerHTML = elem.mass;
-           // cell2.innerHTML = elem.symbol;
-        //    cell3.innerHTML = elem.mass;
 
 
            // document.getElementById("atomic").innerHTML = elem.aNum;
@@ -186,7 +184,7 @@ compounds[25] = new Compound("C4H10O");
 compounds[26] = new Compound("C2H6");
 compounds[27] = new Compound("CH3CH2OH");
 compounds[28] = new Compound("C2H4");
-compounds[29] = new Compound("C21H20BrN3");
+//compounds[29] = new Compound("C21H20BrN3");
 compounds[30] = new Compound("C4H8O2");
 compounds[31] = new Compound("C2H7N");
 compounds[32] = new Compound("C8H10");
@@ -222,7 +220,15 @@ function getCmpd(formula) { //compound -- property = the compounds formula
     for (var i = 0; i < formula.length; i++ ){
         var e = formula.charAt(i); //e is defined as the character at certain indexes of the compound formula
         console.log(e);
+        var x = parseInt(formula.charAt(i + 1));
+        while (!isNaN(x) && i <= formula.length){ // if x is not not a number (techinically x is a number)
+            console.log("number");
+            i++
+            x = parseInt(formula.charAt(i+1));
+        }
+
         getElement(e, 2); //default at two right now
+
 
     }
 
@@ -302,4 +308,11 @@ function getCmpd(formula) { //compound -- property = the compounds formula
     }
     return str;
     */
+}
+
+function subtotalMass(e) {
+    for (var i = 0; i < formula.length; i++ ){
+        elem.mass * NumOfAtms //NumOfAtms --> have not been parsed/substrung yet
+        cell1.innerHTML = number; //want to display the subtotal in the HTML
+    }
 }
