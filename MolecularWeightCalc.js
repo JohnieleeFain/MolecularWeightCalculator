@@ -224,15 +224,15 @@ compounds[53] = new Compound("H2O");
  * @author [[Johnie lee Fain & Ella Gerlach]]
  * @param {string} formula [[The chemical compound formula.]]
  */
-function getCmpd(formula) { //compound -- property = the compounds formula
+function getCmpd(formula) {
     var totalMolecularWeight = 0;
     for (var i = 0; i < formula.length; i++) {
-        var e = formula.charAt(i); //e is defined as the character at certain indexes of the compound formula
+        var e = formula.charAt(i);
         console.log(e);
-        var x = parseInt(formula.charAt(i + 1)); //making the variable a number
-        var doubleDigit = ""; //string of variables
-        while (!isNaN(x) && i <= formula.length) { // if x is not not a number (techinically x is a number)
-            doubleDigit += x; //combining the numbers if there are two consecutive numbers in a row
+        var x = parseInt(formula.charAt(i + 1));
+        var doubleDigit = "";
+        while (!isNaN(x) && i <= formula.length) {
+            doubleDigit += x;
             console.log(doubleDigit);
             i++
             x = parseInt(formula.charAt(i + 1));
