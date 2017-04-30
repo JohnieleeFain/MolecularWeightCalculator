@@ -227,10 +227,3 @@ function getCmpd(formula) { //compound -- property = the compounds formula
 
     }
 }
-
-function subtotalMass(e) {
-    for (var i = 0; i < formula.length; i++ ){
-        elem.mass * NumOfAtms //NumOfAtms --> have not been parsed/substrung yet
-        cell1.innerHTML = number; //want to display the subtotal in the HTML
-    }
-}
