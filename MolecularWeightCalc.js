@@ -119,12 +119,6 @@ function getElement(elemSymbol, number = 1) {
     for (var i = 0; i < elements.length; i++) {
         if (elements[i].symbol === elemSymbol) {
             elem = elements[i];
-            //function myTable() {
-               // var table = document.getElementById("rows");
-               // var row = table.insertRow(1);
-                //var cell = row.insertCell(0);
-                //var cell2 = row.insertCell(1);
-           // }
             var table = document.getElementById("rows");
             var row = table.insertRow(1);
             var cell1 = row.insertCell(0);
@@ -221,14 +215,21 @@ function getCmpd(formula) { //compound -- property = the compounds formula
         var e = formula.charAt(i); //e is defined as the character at certain indexes of the compound formula
         console.log(e);
         var x = parseInt(formula.charAt(i + 1));
+
+        var doubleDigit = "" ;
         while (!isNaN(x) && i <= formula.length){ // if x is not not a number (techinically x is a number)
-            console.log("number");
+            doubleDigit += x;
+
+            console.log(doubleDigit);
             i++
             x = parseInt(formula.charAt(i+1));
+
         }
-
-        getElement(e, 2); //default at two right now
-
+        doubleDigit = parseInt(doubleDigit);
+        if(isNaN(doubleDigit)){
+            doubleDigit = 1
+        }
+        getElement(e, doubleDigit);
 
     }
 
