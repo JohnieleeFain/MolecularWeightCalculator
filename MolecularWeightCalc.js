@@ -114,25 +114,11 @@ elements[106] = new Element("Bh", 107, 264);
 elements[107] = new Element("Hs", 108, 269);
 elements[108] = new Element("Mt", 109, 268);
 
-//function getElement(elem) {
-//var msg = document.getElementById("elements").value;
-//var value = a.options[a.selectedIndex].value;
-//var msg = elem;
-//console.log(msg);
-//document.getElementById("atoms").innerHTML = msg;
-//}
 function getElement(elemSymbol, number = 1) {
-    //var value = a.options[a.selectedIndex].value;
     var elem = null;
     for (var i = 0; i < elements.length; i++) {
         if (elements[i].symbol === elemSymbol) {
             elem = elements[i];
-            //function myTable() {
-               // var table = document.getElementById("rows");
-               // var row = table.insertRow(1);
-                //var cell = row.insertCell(0);
-                //var cell2 = row.insertCell(1);
-           // }
             var table = document.getElementById("rows");
             var row = table.insertRow(1);
             var cell1 = row.insertCell(0);
@@ -146,8 +132,6 @@ function getElement(elemSymbol, number = 1) {
             cell3.innerHTML = elem.aNum;
             cell4.innerHTML = elem.mass;
             cell5.innerHTML = elem.mass;
-           // cell2.innerHTML = elem.symbol;
-        //    cell3.innerHTML = elem.mass;
 
 
            // document.getElementById("atomic").innerHTML = elem.aNum;
@@ -179,24 +163,22 @@ compounds[10] = new Compound("C6H5CHO");
 compounds[11] = new Compound("C6H6");
 compounds[12] = new Compound("C6H5COOH");
 compounds[13] = new Compound("C7H8O");
-compounds[14] = new Compound("C6H5Br");
-compounds[15] = new Compound("CH3Br");
+//compounds[14] = new Compound("C6H5Br");
+//compounds[15] = new Compound("CH3Br");
 compounds[16] = new Compound("C4H8O");
 compounds[17] = new Compound("C4H10");
 compounds[18] = new Compound("C4H10O");
 compounds[19] = new Compound("CO2");
 compounds[20] = new Compound("H2CO3");
 compounds[21] = new Compound("C6H10O5");
-//compounds[] = new Compound("C2HCl3O.H2O"); Chloral Hydrate
 compounds[22] = new Compound("C2H3Cl");
-compounds[23] = new Compound("CHCl3");
-//compounds[] = new Compound("C3H4OH(COOH)3"); Citric Acid
+//compounds[23] = new Compound("CHCl3");
 compounds[24] = new Compound("C6H12");
 compounds[25] = new Compound("C4H10O");
 compounds[26] = new Compound("C2H6");
 compounds[27] = new Compound("CH3CH2OH");
 compounds[28] = new Compound("C2H4");
-compounds[29] = new Compound("C21H20BrN3");
+//compounds[29] = new Compound("C21H20BrN3");
 compounds[30] = new Compound("C4H8O2");
 compounds[31] = new Compound("C2H7N");
 compounds[32] = new Compound("C8H10");
@@ -208,16 +190,13 @@ compounds[37] = new Compound("C3H8O3");
 compounds[38] = new Compound("C3H8O3");
 compounds[39] = new Compound("C7H16");
 compounds[40] = new Compound("C6H14");
-//compounds[] = new Compound("NH2CH(C4H5N2)COOH"); Histidine
-compounds[41] = new Compound("C10H18O");
-//compounds[] = new Compound("CH3CH(OH)COOH"); Latic Acid
-compounds[42] = new Compound("C12H22O11");
+//compounds[41] = new Compound("C10H18O");
+//compounds[42] = new Compound("C12H22O11");
 compounds[43] = new Compound("C6H14N2O2");
 compounds[44] = new Compound("C4H2O3");
 compounds[45] = new Compound("CH4");
 compounds[46] = new Compound("CH3OH");
 compounds[47] = new Compound("C3H6O2");
-//compounds[] = new Compound("CH3CH(CH3)CH3]</option"); 2-Methylpropene
 compounds[48] = new Compound("C10H8");
 compounds[49] = new Compound("C8H18");
 compounds[50] = new Compound("C5H12");
@@ -233,11 +212,26 @@ compounds[59] = new Compound("H2O");
 
 function getCmpd(formula) { //compound -- property = the compounds formula
     for (var i = 0; i < formula.length; i++ ){
-        var e = formula.charAt(i);
+        var e = formula.charAt(i); //e is defined as the character at certain indexes of the compound formula
         console.log(e);
-        getElement(e);
-    }
+        var x = parseInt(formula.charAt(i + 1));
 
+        var doubleDigit = "" ;
+        while (!isNaN(x) && i <= formula.length){ // if x is not not a number (techinically x is a number)
+            doubleDigit += x;
+
+            console.log(doubleDigit);
+            i++
+            x = parseInt(formula.charAt(i+1));
+
+        }
+        doubleDigit = parseInt(doubleDigit);
+        if(isNaN(doubleDigit)){
+            doubleDigit = 1
+        }
+        getElement(e, doubleDigit);
+
+    }
 
 
 //function calculateMolecularWeight(e) {
@@ -324,4 +318,11 @@ function getCmpd(formula) { //compound -- property = the compounds formula
     }
     return str;
     */
+}
+
+function subtotalMass(e) {
+    for (var i = 0; i < formula.length; i++ ){
+        elem.mass * NumOfAtms //NumOfAtms --> have not been parsed/substrung yet
+        cell1.innerHTML = number; //want to display the subtotal in the HTML
+    }
 }
